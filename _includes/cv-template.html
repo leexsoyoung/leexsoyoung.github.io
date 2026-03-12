@@ -18,46 +18,53 @@
 <div class="cv-container">
   <!-- Basic Information -->
   <div class="cv-section cv-header">
-    <h1>{{ cv.basics.name }}</h1>
-    {% if cv.basics.label %}
-    <h2>{{ cv.basics.label }}</h2>
-    {% endif %}
-    
-    <div class="cv-contact">
-      {% if cv.basics.email %}
-      <div class="cv-contact-item">
-        <i class="fas fa-envelope"></i> {{ cv.basics.email }}
-      </div>
+    <div class="cv-header-inner">
+      {% if site.author.avatar %}
+      <img src="/images/{{ site.author.avatar }}" class="cv-profile-img" alt="{{ cv.basics.name }}">
       {% endif %}
-      
-      {% if cv.basics.phone %}
-      <div class="cv-contact-item">
-        <i class="fas fa-phone"></i> {{ cv.basics.phone }}
+      <div class="cv-header-content">
+        <h1>{{ cv.basics.name }}</h1>
+        {% if cv.basics.label %}
+        <h2>{{ cv.basics.label }}</h2>
+        {% endif %}
+
+        <div class="cv-contact">
+          {% if cv.basics.email %}
+          <div class="cv-contact-item">
+            <i class="fas fa-envelope"></i> {{ cv.basics.email }}
+          </div>
+          {% endif %}
+
+          {% if cv.basics.phone %}
+          <div class="cv-contact-item">
+            <i class="fas fa-phone"></i> {{ cv.basics.phone }}
+          </div>
+          {% endif %}
+
+          {% if cv.basics.website %}
+          <div class="cv-contact-item">
+            <i class="fas fa-globe"></i> <a href="{{ cv.basics.website }}" target="_blank">{{ cv.basics.website }}</a>
+          </div>
+          {% endif %}
+
+          {% if cv.basics.location.city %}
+          <div class="cv-contact-item">
+            <i class="fas fa-map-marker-alt"></i> {{ cv.basics.location.city }}{% if cv.basics.location.region %}, {{ cv.basics.location.region }}{% endif %}{% if cv.basics.location.countryCode %}, {{ cv.basics.location.countryCode }}{% endif %}
+          </div>
+          {% endif %}
+        </div>
+
+        {% if cv.basics.profiles.size > 0 %}
+        <div class="cv-profiles">
+          {% for profile in cv.basics.profiles %}
+          <a href="{{ profile.url }}" target="_blank" class="cv-profile-link">
+            <i class="fab fa-{{ profile.network | downcase }}"></i> {{ profile.network }}
+          </a>
+          {% endfor %}
+        </div>
+        {% endif %}
       </div>
-      {% endif %}
-      
-      {% if cv.basics.website %}
-      <div class="cv-contact-item">
-        <i class="fas fa-globe"></i> <a href="{{ cv.basics.website }}" target="_blank">{{ cv.basics.website }}</a>
-      </div>
-      {% endif %}
-      
-      {% if cv.basics.location.city %}
-      <div class="cv-contact-item">
-        <i class="fas fa-map-marker-alt"></i> {{ cv.basics.location.city }}{% if cv.basics.location.region %}, {{ cv.basics.location.region }}{% endif %}{% if cv.basics.location.countryCode %}, {{ cv.basics.location.countryCode }}{% endif %}
-      </div>
-      {% endif %}
     </div>
-    
-    {% if cv.basics.profiles.size > 0 %}
-    <div class="cv-profiles">
-      {% for profile in cv.basics.profiles %}
-      <a href="{{ profile.url }}" target="_blank" class="cv-profile-link">
-        <i class="fab fa-{{ profile.network | downcase }}"></i> {{ profile.network }}
-      </a>
-      {% endfor %}
-    </div>
-    {% endif %}
   </div>
   
   {% if cv.basics.summary %}
@@ -72,23 +79,12 @@
   <!-- Education -->
   <div class="cv-section">
     <h2>Education</h2>
-    <ul class="cv-list">
+    <ul style="list-style-type: disc; padding-left: 1.5em;">  
       {% for education in cv.education %}
       <li class="cv-item">
         <div class="cv-item-header">
-          <div class="cv-item-title">{{ education.area }}</div>
-          <div class="cv-item-date">{{ education.endDate }}</div>
-        </div>
-        <div class="cv-item-content">
-          <div class="cv-item-subtitle">{{ education.institution }}</div>
-          {% if education.gpa %}
-          <div class="cv-item-detail">GPA: {{ education.gpa }}</div>
-          {% endif %}
-          {% if education.courses.size > 0 %}
-          <div class="cv-item-detail">
-            <strong>Courses:</strong> {{ education.courses | join: ", " }}
-          </div>
-          {% endif %}
+          <div style="font-weight: normal;">{{ education.studyType }}, {{ education.area }}, {{ education.institution }}</div>
+          <div class="cv-item-date">{% if education.endDate == "Now" %}Present{% elsif education.endDate %}{{ education.endDate | slice: 0, 4 }}{% else %}Present{% endif %}</div>
         </div>
       </li>
       {% endfor %}
@@ -100,27 +96,9 @@
   <!-- Work Experience -->
   <div class="cv-section">
     <h2>Work Experience</h2>
-    <ul class="cv-list">
+    <ul style="list-style-type: disc; padding-left: 1.5em;">
       {% for work in cv.work %}
-      <li class="cv-item">
-        <div class="cv-item-header">
-          <div class="cv-item-title">{{ work.position }}</div>
-          <div class="cv-item-date">{{ work.startDate }}{% if work.endDate %} - {{ work.endDate }}{% endif %}</div>
-        </div>
-        <div class="cv-item-content">
-          <div class="cv-item-subtitle">{{ work.company }}</div>
-          {% if work.summary %}
-          <div class="cv-item-detail">{{ work.summary }}</div>
-          {% endif %}
-          {% if work.highlights.size > 0 %}
-          <ul class="cv-highlights">
-            {% for highlight in work.highlights %}
-            <li>{{ highlight }}</li>
-            {% endfor %}
-          </ul>
-          {% endif %}
-        </div>
-      </li>
+      <li>{{ work.position }}, {{ work.company }}{% if work.startDate or work.endDate %}: {{ work.startDate | slice: 0, 4 }}{% if work.endDate %} - {{ work.endDate | slice: 0, 4 }}{% endif %}{% endif %}</li>
       {% endfor %}
     </ul>
   </div>
@@ -149,24 +127,11 @@
   <!-- Publications -->
   <div class="cv-section">
     <h2>Publications</h2>
-    <ul class="cv-list">
+    <ul style="list-style-type: disc; padding-left: 1.5em;">
       {% for publication in cv.publications %}
-      <li class="cv-item">
-        <div class="cv-item-header">
-          <div class="cv-item-title">{{ publication.name }}</div>
-          <div class="cv-item-date">{{ publication.releaseDate | slice: 0, 4 }}</div>
-        </div>
-        <div class="cv-item-content">
-          <div class="cv-item-subtitle">{{ publication.publisher }}</div>
-          {% if publication.summary %}
-          <div class="cv-item-detail">{{ publication.summary }}</div>
-          {% endif %}
-          {% if publication.website %}
-          <div class="cv-item-detail">
-            <a href="{{ publication.website }}" target="_blank">View Publication</a>
-          </div>
-          {% endif %}
-        </div>
+      <li>
+        {{ publication.name }} <em>({{ publication.publisher }})</em><br>
+        {{ publication.summary }}
       </li>
       {% endfor %}
     </ul>
@@ -203,28 +168,41 @@
   <!-- Teaching -->
   <div class="cv-section">
     <h2>Teaching</h2>
-    <ul class="cv-list">
-      {% for teaching in cv.teaching %}
-      <li class="cv-item">
-        <div class="cv-item-header">
-          <div class="cv-item-title">{{ teaching.course }}</div>
-          <div class="cv-item-date">{{ teaching.date | slice: 0, 4 }}</div>
-        </div>
-        <div class="cv-item-content">
-          <div class="cv-item-subtitle">{{ teaching.institution }}</div>
-          {% if teaching.role %}
-          <div class="cv-item-detail">Role: {{ teaching.role }}</div>
-          {% endif %}
-          {% if teaching.description %}
-          <div class="cv-item-detail">{{ teaching.description }}</div>
-          {% endif %}
-        </div>
-      </li>
+    {% assign ta_list = cv.teaching | where: "role", "Teaching Assistant" %}
+    {% if ta_list.size > 0 %}
+    <p style="margin-bottom: 2px;"><strong>Teaching Assistant</strong></p>
+    <ul style="margin-top: 0;">
+      {% for teaching in ta_list %}
+      <li>{{ teaching.description }} {{ teaching.course }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% assign tutor_list = cv.teaching | where: "role", "Tutor" %}
+    {% if tutor_list.size > 0 %}
+    <p style="margin-bottom: 2px;"><strong>Tutor</strong></p>
+    <ul style="margin-top: 0;">
+      {% for teaching in tutor_list %}
+      <li>{{ teaching.course }}: {{ teaching.description }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+  {% endif %}
+  
+  <!-- Academic Service -->
+  {% assign pc_items = site.service | where: "type", "Program Committee" %}
+  {% if pc_items.size > 0 %}
+  <div class="cv-section">
+    <h2>Academic Service</h2>
+    <p style="margin-bottom: 2px;"><strong>Program Committee</strong></p>
+    <ul style="margin-top: 0;">
+      {% for item in pc_items %}
+      <li>{{ item.venue }}, {{ item.year }}</li>
       {% endfor %}
     </ul>
   </div>
   {% endif %}
-  
+
   {% if cv.portfolio.size > 0 %}
   <!-- Portfolio -->
   <div class="cv-section">

@@ -7,6 +7,21 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+{% assign ta_posts = site.teaching | where: "type", "Teaching Assistant" %}
+{% if ta_posts.size > 0 %}
+  <h2>Teaching Assistant</h2>
+  <ul>
+  {% for post in ta_posts %}
+    <li>{{ post.course_id }} {{ post.title }}: {{ post.terms }}</li>
+  {% endfor %}
+  </ul>
+{% endif %}
+{% assign tutor_posts = site.teaching | where: "type", "Tutor" %}
+{% if tutor_posts.size > 0 %}
+  <h2>Tutor</h2>
+  <ul>
+  {% for post in tutor_posts %}
+    <li>{{ post.course_id }} {{ post.title }}: {{ post.terms }}</li>
+  {% endfor %}
+  </ul>
+{% endif %}

@@ -2,15 +2,11 @@
   "basics": {
     "name": "Soyoung Lee",
     "email": "soyoungleell@kaist.ac.kr",
-    //"phone": "",
     "website": "https://leexsoyoung.github.io",
-    "summary": "",
+    "summary": "I am interested in web application security and vulnerability research.",
     "location": {
-      //"address": "",
-      //"postalCode": "",
-      "city": "Dajeon",
-      "countryCode": "KR",
-      //"region": 
+      "city": "Daejeon",
+      "countryCode": "KR"
     },
     "profiles": [
       {
@@ -25,37 +21,45 @@
       },
       {
         "network": "GitHub",
-        "username": "academicpages",
+        "username": "leexsoyoung",
         "url": "https://github.com/leexsoyoung"
       }
     ]
   },
-  "work": [],
+  "work": [
+    {
+      "company": "Inc. H2K",
+      "position": "Web Developer Intern",
+      "startDate": "2018-12-01",
+      "endDate": "2019-02-28",
+      "summary": ""
+    }
+  ],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
+      "institution": "KAIST",
+      "area": "Graduate School of Information Security",
+      "studyType": "Ph.D Student",
+      "startDate": "2022-03-01",
+      "endDate": "Now",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
+      "institution": "KAIST",
+      "area": "Graduate School of Information Security",
+      "studyType": "M.S.",
       "startDate": "",
-      "endDate": "2014",
+      "endDate": "2022-02-28",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
+      "institution": "KAIST",
+      "area": "School of Computing",
+      "studyType": "B.S.",
       "startDate": "",
-      "endDate": "2012",
+      "endDate": "2020-02-28",
       "gpa": null,
       "courses": []
     }
@@ -66,87 +70,78 @@
   "references": [],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "https://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "name": "Zelda: Feedback-driven Closed-box Fuzzing for Identifying Web Application Vulnerabilities",
+      "publisher": "WWW'26",
+      "releaseDate": "2026-06-01",
+      "website": "",
+      "summary": "Soyoung Lee, Sunnyeo Park, Yonghwi Kwon, Sooel Son"
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "https://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
+      "name": "Connecting the Dots: An Investigative Study on Linking Private User Data Across Messaging Apps",
+      "publisher": "NDSS'26",
+      "releaseDate": "2026-02-25",
+      "website": "https://www.ndss-symposium.org/wp-content/uploads/2026-s556-paper.pdf",
+      "summary": "Junkyu Kang, Soyoung Lee (co-leading author), Yonghwi Kwon, Sooel Son"
     },
     {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
+      "name": "Link: Black-box detection of cross-site scripting vulnerabilities using reinforcement learning",
+      "publisher": "WWW'22",
+      "releaseDate": "2022-04-25",
+      "website": "https://leexsoyoung.github.io/files/lee-link-www22.pdf",
+      "summary": "Soyoung Lee, Seongil Wi, Sooel Son"
     },
     {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "name": "강화 학습을 이용한 웹 애플리케이션 취약점 탐지 현황",
+      "publisher": "KCC'21",
+      "releaseDate": "2021-06-23",
+      "website": "https://leexsoyoung.github.io/files/lee-kcc21.pdf",
+      "summary": "Soyoung Lee, Sooel Son"
     }
   ],
-  "presentations": [
-    {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
-    }
-  ],
+  "presentations": [],
   "teaching": [
     {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
+      "course": "Web Security Attack Laboratory",
+      "institution": "KAIST",
+      "date": "2024-03-01",
+      "role": "Teaching Assistant",
+      "description": "CS447, 2024 Spring, 2025 Spring"
     },
     {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
+      "course": "Introductory Special Topics in Security and Privacy",
+      "institution": "KAIST",
+      "date": "2023-03-01",
+      "role": "Teaching Assistant",
+      "description": "IS593, 2023 Spring"
+    },
+    {
+      "course": "Web Service Security and Privacy",
+      "institution": "KAIST",
+      "date": "2022-09-01",
+      "role": "Teaching Assistant",
+      "description": "IS542, 2022 Fall"
+    },
+    {
+      "course": "Special Topics in Computer Science (Web Security Attack Laboratory)",
+      "institution": "KAIST",
+      "date": "2021-09-01",
+      "role": "Teaching Assistant",
+      "description": "CS492, 2021 Fall"
+    },
+    {
+      "course": "Data Structure",
+      "institution": "KAIST",
+      "date": "2021-03-01",
+      "role": "Teaching Assistant",
+      "description": "CS206, 2021 Spring"
+    },
+    {
+      "course": "KAIST Science Youth Camp",
+      "institution": "KAIST",
+      "date": "2017-07-01",
+      "role": "Tutor",
+      "description": "2017 Summer, 2018 Summer"
     }
   ],
-  "portfolio": [
-    {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
-      "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
-    }
-  ]
+  "portfolio": []
 }

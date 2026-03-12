@@ -14,8 +14,26 @@
 /* Header Styles */
 .cv-header {
   margin-bottom: 2rem;
-  border-bottom: 2px solid var(--global-thead-color );
+  border-bottom: 2px solid var(--global-thead-color);
   padding-bottom: 1rem;
+}
+
+.cv-header-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.cv-profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.cv-header-content {
+  flex: 1;
 }
 
 .cv-header h1 {
@@ -220,6 +238,11 @@
 @media print {
   .cv-container {
     max-width: 100%;
+  }
+
+  .cv-profile-img {
+    width: 100px;
+    height: 100px;
   }
   
   .cv-header {

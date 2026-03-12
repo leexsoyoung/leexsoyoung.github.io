@@ -4,7 +4,9 @@ collection: publications
 category: conferences
 permalink: /publication/2022-04-25-paper-title-number-2
 date: 2022-04-25
-venue: ' WWW&apos;22'
+venue: 'WWW&apos;22'
+author: "Soyoung Lee, Seongil Wi, Sooel Son"
+paperurl: 'https://leexsoyoung.github.io/files/lee-link-www22.pdf'
+slidesurl: 'https://leexsoyoung.github.io/files/presentation-www22.pdf'
+abstract: 'Black-box web scanners have been a prevalent means of performing penetration testing to find reflected cross-site scripting (XSS) vulnerabilities. Unfortunately, off-the-shelf black-box web scanners suffer from unscalable testing as well as false negatives that stem from a testing strategy that employs fixed attack payloads, thus disregarding the exploitation of contexts to trigger vulnerabilities. To this end, we propose a novel method of adapting attack payloads to a target reflected XSS vulnerability using reinforcement learning (RL). We present Link, a general RL framework whose states, actions, and a reward function are designed to find reflected XSS vulnerabilities in a black-box and fully automatic manner. Link finds 45, 213, and 60 vulnerabilities with no false positives in Firing-Range, OWASP, and WAVSEP benchmarks, respectively, outperforming state-of-the-art web scanners in terms of finding vulnerabilities and ending testing campaigns earlier. Link also finds 43 vulnerabilities in 12 real-world applications, demonstrating the promising efficacy of using RL in finding reflected XSS vulnerabilities.'
 ---
-[<a href='https://leexsoyoung.github.io/files/lee-link-www22.pdf'>paper</a>]
-[<a href='https://leexsoyoung.github.io/files/presentation-www22.pdf'>slides</a>]
