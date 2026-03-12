@@ -7,10 +7,41 @@
     float: none;
     padding-right: 0;
   }
-  
+
   @media (min-width: 80em) {
     .archive {
       width: 70%;
+    }
+  }
+
+  @media (max-width: 48em) {
+    .archive {
+      width: 100%;
+    }
+
+    .cv-header-inner {
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 1rem !important;
+    }
+
+    .cv-header-content {
+      text-align: center;
+    }
+
+    .cv-contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .cv-profiles {
+      justify-content: center;
+    }
+
+    .cv-item-header {
+      flex-direction: column;
+      gap: 0.25rem;
     }
   }
 </style>
