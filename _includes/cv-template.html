@@ -20,7 +20,7 @@
   <div class="cv-section cv-header">
     <div class="cv-header-inner">
       {% if site.author.avatar %}
-      <img src="/images/{{ site.author.avatar }}" class="cv-profile-img" alt="{{ cv.basics.name }}">
+      <img src="/images/{{ site.author.avatar }}" class="cv-profile-img" alt="{{ cv.basics.name }}" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
       {% endif %}
       <div class="cv-header-content">
         <h1>{{ cv.basics.name }}</h1>
