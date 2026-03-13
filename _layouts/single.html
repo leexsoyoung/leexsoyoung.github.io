@@ -41,7 +41,7 @@ layout: default
             <p style="margin: 4px 0;">{{ page.author | replace: "Soyoung Lee", "<strong>Soyoung Lee</strong>" }}</p>
           {% endif %}
           {% if page.venue %}<p style="margin: 4px 0;"><i>{{ page.venue }}</i><!--{% if page.date %}, {{ page.date | date: "%Y" }}{% endif %}</p>-->{% endif %}
-          {% if page.paperurl %}<p style="margin: 4px 0;">[<a href="{{ page.paperurl }}" style="color: #494E52;">paper</a>]{%else%} (to appear) {% if page.slidesurl %} [<a href="{{ page.slidesurl }}" style="color: #494E52;">slides</a>]{% endif %}</p>{% endif %}
+          {% if page.paperurl %}<p style="margin: 4px 0;">[<a href="{{ page.paperurl }}" style="color: #494E52;">paper</a>]{%else%} (to appear) {% endif %}{% if page.slidesurl %}[<a href="{{ page.slidesurl }}" style="color: #494E52;">slides</a>]{% endif %}</p>
           {% if page.abstract %}<div style="margin-top: 12px;">{{ page.abstract | markdownify }}</div>{% endif %}
         {% elsif page.date %}
           <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
