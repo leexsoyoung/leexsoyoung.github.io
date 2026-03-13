@@ -10,7 +10,15 @@ layout: compress
     {% include head.html %}
     {% include head/custom.html %}
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NTD0VY2F1R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'G-NTD0VY2F1R');
+  </script>
   <body>
 
     {% include browser-upgrade.html %}
